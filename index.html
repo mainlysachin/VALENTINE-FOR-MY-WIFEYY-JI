@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Nikki!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffe6f2;
+            text-align: center;
+            font-family: 'Great Vibes', cursive;
+            font-weight: bold;
+            padding: 20px;
+            animation: fadeIn 2s;
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: auto;
+            height: 100vh;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+        .notebook {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            font-family: 'Dancing Script', cursive;
+            line-height: 1.8;
+            border: 1px solid #ddd;
+        }
+        h1 {
+            color: #ff3366;
+            font-size: 36px;
+            font-family: 'Great Vibes', cursive;
+            font-weight: bold;
+        }
+        p {
+            color: #444;
+            font-size: 22px;
+            font-family: 'Dancing Script', cursive;
+            font-weight: bold;
+        }
+        .heart {
+            font-size: 50px;
+            animation: heartbeat 1s infinite;
+            display: inline-block;
+            position: relative;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        .btn {
+            background: #ff3366;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            font-family: 'Great Vibes', cursive;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #cc2952;
+        }
+        .message {
+            display: none;
+            font-size: 24px;
+            color: #ff3366;
+            margin-top: 10px;
+            font-weight: bold;
+            animation: fadeInText 1s ease-in-out;
+            padding: 20px;
+            border-radius: 10px;
+            background: #fff0f5;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+        }
+        @keyframes fadeInText {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .heart-rain {
+            position: fixed;
+            font-size: 18px;
+            color: red;
+            opacity: 0.8;
+            animation: fall linear infinite;
+            z-index: 0;
+        }
+        @keyframes fall {
+            from { transform: translateY(-10vh); opacity: 1; }
+            to { transform: translateY(110vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container notebook">
+        <h1>Happy Valentine's Day, Myy Cutuuu Lilll Chocooo ❤️</h1>
+        <p>My cutuuu wifeyy jii and Nikku Don,</p>
+        <p>You are the light of my life, the most beautiful soul I have ever known. Your eyes shine brighter than the stars, and your smile warms my heart in ways I never imagined possible. Every single thing about you—your kindness, your laughter, the way you make everything feel magical—makes me fall deeper in love with you every day. Your beauty isn't just in your gorgeous face but in your pure, loving heart. I cherish every moment with you, and I promise to love you endlessly. ❤️😍💖</p>
+        <div class="heart">❤️</div>
+        <button class="btn" onclick="showMessage()">Open My Heart</button>
+        <p id="message" class="message">💖 Hello my cutuuuu lill chocooo myy wifeyyy ji yrr, I love you sooo muchhh bachha! 😘😍 I am so lucky to have you in my life babyyy. Mere ye shabd kam padh jyenge pr mera pyaar tumhare liye bhot jyada hai, actually infinity hai aur ye humesha rahega myy cutuuu lill chocooo. ❤️💘💞 Aap humesha smile krte raho and mai toh hu hi aapke sath life time bachha. 😘❤️💖</p>
+    </div>
+
+    <script>
+        function showMessage() {
+            let msg = document.getElementById('message');
+            msg.style.display = 'block';
+            msg.style.animation = 'fadeInText 1s ease-in-out';
+        }
+        
+        function createHeartRain() {
+            let heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.classList.add("heart-rain");
+            heart.style.left = `${Math.random() * 100}vw`;
+            heart.style.top = `-10vh`;
+            heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeartRain, 200);
+    </script>
+</body>
+</html>
